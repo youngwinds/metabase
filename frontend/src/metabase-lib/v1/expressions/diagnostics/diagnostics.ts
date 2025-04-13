@@ -71,6 +71,7 @@ export function diagnoseAndCompile({
       stageIndex,
       startRule,
       expression: result.expression,
+      expressionParts: result.expressionParts,
       expressionIndex,
       metadata,
     });
@@ -80,6 +81,7 @@ export function diagnoseAndCompile({
     return {
       expression: null,
       expressionClause: null,
+      expressionParts: null,
       error: renderError(error),
     };
   }
@@ -119,6 +121,7 @@ export function diagnoseExpression(options: {
   stageIndex: number;
   startRule: StartRule;
   expression: Expression;
+  expressionParts: Lib.ExpressionParts | Lib.ExpressionArg;
   expressionIndex?: number;
   metadata?: Metadata;
 }) {
